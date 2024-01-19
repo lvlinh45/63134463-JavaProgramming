@@ -1,6 +1,6 @@
 # LƯU CÁC BÀI TẬP VỀ JAVA PROGRAMMING
 
-![logo](https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.png){width=50%}
+![logo](https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.png)
 
 #### **Thần chú của Java:**
 
