@@ -59,6 +59,7 @@ public class bai2 {
 						break;
 					default:
 						System.out.println("Bạn đã không lựa chọn chức năng nào!");
+//						System.exit(0);
 						break;
 					}	
 					
