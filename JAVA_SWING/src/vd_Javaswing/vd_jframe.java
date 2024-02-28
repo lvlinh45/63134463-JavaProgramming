@@ -31,6 +31,19 @@ public class vd_jframe {
 		
 		
 		
+		// Anonymous
+		btnKhac.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JDialog dialog = new JDialog();
+				dialog.setTitle("Hi keoo");
+				dialog.setSize(200,300);
+				dialog.show();	
+			}
+		});
+		
+		
+		
 		// Gắn lên form
 		f.add(btnOK);
 		f.add(btnKhac);
@@ -44,7 +57,7 @@ public class vd_jframe {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			JDialog dialog = new JDialog();
-			dialog.setTitle("Thông báo gì đó");
+			dialog.setTitle("Thông báo gì đó về btnOK");
 			dialog.setSize(200,300);
 			dialog.show();
 			
