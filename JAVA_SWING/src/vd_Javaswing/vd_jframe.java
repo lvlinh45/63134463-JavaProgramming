@@ -2,8 +2,11 @@ package vd_Javaswing;
 
 import java.awt.FlowLayout;
 import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -22,12 +25,32 @@ public class vd_jframe {
 		JButton btnOK = new JButton("Nhấn tôi đi");
 		JButton btnKhac = new JButton("Nhấn em đi");
 		
+		// Tạo tai nghe
+		BoLangNgheOK ok = new BoLangNgheOK();
+		btnOK.addActionListener(ok);
+		
+		
+		
 		// Gắn lên form
 		f.add(btnOK);
 		f.add(btnKhac);
 		// Chạy thử thì em đã "HẾT ĐÈ" lên tôi
 		
 		f.show(); // hiện cửa sổ
+	}
+	
+	private static class BoLangNgheOK implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JDialog dialog = new JDialog();
+			dialog.setTitle("Thông báo gì đó");
+			dialog.setSize(200,300);
+			dialog.show();
+			
+		}
 		
 	}
+	
+	
 }
