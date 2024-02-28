@@ -1,5 +1,6 @@
 package vd_Javaswing;
 
+import java.awt.FlowLayout;
 import java.awt.Window;
 
 import javax.swing.JButton;
@@ -13,7 +14,9 @@ public class vd_jframe {
 		f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		f.setSize(300,200); // kích thước cửa sổ
 		
+		// Quy định bố cục (Layout)
 		
+		f.setLayout(new FlowLayout());
 		
 		// Tạo một nút bấm
 		JButton btnOK = new JButton("Nhấn tôi đi");
@@ -22,7 +25,7 @@ public class vd_jframe {
 		// Gắn lên form
 		f.add(btnOK);
 		f.add(btnKhac);
-		// Chạy thử thì em đã ĐÈ lên tôi
+		// Chạy thử thì em đã "HẾT ĐÈ" lên tôi
 		
 		f.show(); // hiện cửa sổ
 		
