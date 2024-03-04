@@ -6,5 +6,4 @@ public class MainLogin {
 		// TODO Auto-generated method stub
 		new LoginFrame().setVisible(true);
 	}
-
 }

@@ -76,7 +76,8 @@ public class UI {
 	
 	}
 	public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, 
-			String objFileName,int scaleX, int scaleY, String choice1Name, String choice2Name, String choice3Name) {
+			String objFileName,int scaleX, int scaleY, String choice1Name, String choice2Name, String choice3Name,  String choice1Command
+			,  String choice2Command,  String choice3Command) {
 		// CREATE POP MENU
 		// hiện menu khi click chuộc phải vào object
 		JPopupMenu popMenu = new JPopupMenu();
@@ -84,14 +85,20 @@ public class UI {
 		JMenuItem menuItem[] = new JMenuItem[4]; //use [1] [2] [3]
 		
 		menuItem[1] = new JMenuItem(choice1Name);
+		menuItem[1].addActionListener(gm.aHandeler);
+		menuItem[1].setActionCommand(choice1Command);
 		// Add item vào popMenu
 		popMenu.add(menuItem[1]);
 		
 		menuItem[2] = new JMenuItem(choice2Name);
+		menuItem[2].addActionListener(gm.aHandeler);
+		menuItem[2].setActionCommand(choice2Command);
 		// Add item vào popMenu
 		popMenu.add(menuItem[2]);
 		
 		menuItem[3] = new JMenuItem(choice3Name);
+		menuItem[3].addActionListener(gm.aHandeler);
+		menuItem[3].setActionCommand(choice3Command);
 		// Add item vào popMenu
 		popMenu.add(menuItem[3]);
 		
@@ -155,8 +162,8 @@ public class UI {
 	public void generateScreen() {
 		// SCREEN1
 		createBackground(1, "forest.png");
-		createObject(1, 440, 140, 200, 200, "house1.png",200,200, "Look", "Talk", "Rest");
-		createObject(1, 70, 180, 150, 150, "dinosaur.png",150,150, "Look", "Talk", "Attack");
-		createObject(1, 300, 240, 70, 70, "chest.png",70,70,  "Look", "Talk", "Open");
+		createObject(1, 440, 140, 200, 200, "house1.png",200,200, "Look", "Talk", "Rest", "lookHut", "talkHut", "restHut");
+		createObject(1, 70, 180, 150, 150, "dinosaur.png",150,150, "Look", "Talk", "Attack", "lookGuard", "talkGuard","attackGuard");
+		createObject(1, 300, 240, 70, 70, "chest.png",70,70,  "Look", "Talk", "Open", "lookChest", "talkChest", "openChest");
 	}
 }

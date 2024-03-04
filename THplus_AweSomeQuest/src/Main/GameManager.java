@@ -1,8 +1,14 @@
 package Main;
 
-public class GameManager {
+import Event.Event01;
 
-	UI ui = new UI(this);
+public class GameManager {
+	
+	ActionHandler aHandeler = new ActionHandler(this);
+	public UI ui = new UI(this);
+	
+	
+	public Event01 ev1 = new Event01(this);
 	public static void main(String[] args) {
 		new GameManager();
 
