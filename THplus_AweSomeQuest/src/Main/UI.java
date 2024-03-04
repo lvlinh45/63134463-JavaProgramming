@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -30,7 +31,7 @@ public class UI {
 	public UI(GameManager gm) {
 		this.gm = gm;
 		createMainField();
-		generateScreen();
+		generateScene();
 		window.setVisible(true);
 	}
 	
@@ -105,6 +106,10 @@ public class UI {
 		
 		// CREATE OBJECTS
 		JLabel objectLabel = new JLabel();
+		// CHECK VỊ TRÍ CÁC ITEM
+//		objectLabel.setOpaque(true);
+//		objectLabel.setBackground(Color.blue);
+		
 //		objectLabel.setBounds(440, 140, 200, 200);
 		objectLabel.setBounds(objx, objy, objWidth, objHeight);
 		ImageIcon objectIcon = new ImageIcon(getClass().getClassLoader().getResource(objFileName));
@@ -114,6 +119,7 @@ public class UI {
 	    ImageIcon resizedIcon = new ImageIcon(img);
 		
 		objectLabel.setIcon(resizedIcon);
+		
 		
 		
 		
@@ -157,13 +163,50 @@ public class UI {
 		
 		
 		bgPanel[bgNum].add(objectLabel);
-		bgPanel[bgNum].add(bgLabel[1]);
+	
 	}
-	public void generateScreen() {
-		// SCREEN1
+	
+	public void createArrowButton(int bgNum, int x, int y, int width, int height, 
+			String arrowFileName, String command) {
+		ImageIcon arrowIcon = new ImageIcon(getClass().getClassLoader().getResource(arrowFileName));
+		
+		// SET lại kích thước
+		 Image img = arrowIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		 ImageIcon resizedIcon = new ImageIcon(img);
+		    
+		JButton arrowButton = new JButton();
+		arrowButton.setBounds(x,y,width,height);
+		arrowButton.setBackground(null);
+		arrowButton.setContentAreaFilled(false);
+		arrowButton.setFocusPainted(false);
+		arrowButton.setIcon(resizedIcon);
+		arrowButton.addActionListener(gm.aHandeler);
+		arrowButton.setActionCommand(command);
+		arrowButton.setBorderPainted(false);
+
+		
+		
+		bgPanel[bgNum].add(arrowButton);
+		
+	}
+	
+	public void generateScene() {
+		// SCENE 1
 		createBackground(1, "forest.png");
 		createObject(1, 440, 140, 200, 200, "house1.png",200,200, "Look", "Talk", "Rest", "lookHut", "talkHut", "restHut");
 		createObject(1, 70, 180, 150, 150, "dinosaur.png",150,150, "Look", "Talk", "Attack", "lookGuard", "talkGuard","attackGuard");
 		createObject(1, 300, 240, 70, 70, "chest.png",70,70,  "Look", "Talk", "Open", "lookChest", "talkChest", "openChest");
+		createArrowButton(1,0,150,50,50,"arrowLeft.png", "goScene2");
+		bgPanel[1].add(bgLabel[1]);
+		
+		
+		// SCENE 2
+		createBackground(2, "ouside.png");
+		createObject(2, 180, 100, 260, 200, "blank.png",300,300, "Look", "Talk", "Enter", "lookCave", "talkCave", "enterCave");
+		createObject(2, 20, 250, 50, 50, "blank.png",50,50, "Look", "Talk", "Search", "lookRoot", "talkRoot", "searchRoot");
+		createArrowButton(2,650,150,50,50,"arrowright.png", "goScene1");
+		bgPanel[2].add(bgLabel[2]);
+		
+		
 	}
 }
