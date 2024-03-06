@@ -36,12 +36,16 @@ public class UI {
 	
 	public JLabel swordLabel, shieldLabel, lanternLabel;
 	
+	// GAME OVER UI
+	public JLabel titltLabel;
+	public JButton restartButton;
 	
 	
 	public UI(GameManager gm) {
 		this.gm = gm;
 		createMainField();
 		createPlayerField();
+		createGameOverField();
 		generateScene();
 		window.setVisible(true);
 	}
@@ -69,6 +73,7 @@ public class UI {
 		bgPanel[bgNum].setBounds(50,50,700,350);
 		bgPanel[bgNum].setBackground(Color.blue);
 		bgPanel[bgNum].setLayout(null);
+		bgPanel[bgNum].setVisible(false);
 		window.add(bgPanel[bgNum]);
 		
 		
@@ -84,9 +89,31 @@ public class UI {
 	    
 	    
 		bgLabel[bgNum].setIcon(resizedIcon);
-		
-	
 	}
+	
+	
+	public void createGameOverField() {
+		titltLabel = new JLabel("", JLabel.CENTER);
+		titltLabel.setBounds(200,150,400,150);
+		titltLabel.setForeground(Color.red);
+		titltLabel.setFont(new Font("Times New Roman", Font.PLAIN, 70));
+		titltLabel.setVisible(false);
+		window.add(titltLabel);
+		
+		
+		restartButton = new JButton();
+		restartButton.setBounds(340,320,120,50);
+		restartButton.setBorder(null);
+		restartButton.setBackground(null);
+		restartButton.setForeground(Color.white);
+		restartButton.setFocusPainted(false);
+		restartButton.addActionListener(gm.aHandeler);
+		restartButton.setActionCommand("Restart");
+		restartButton.setVisible(false);
+		window.add(restartButton);
+		
+	}
+	
 	public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, 
 			String objFileName,int scaleX, int scaleY, String choice1Name, String choice2Name, String choice3Name,  String choice1Command
 			,  String choice2Command,  String choice3Command) {
@@ -266,9 +293,15 @@ public class UI {
 		// SCENE 2
 		createBackground(2, "ouside.png");
 		createObject(2, 180, 100, 260, 200, "blank.png",300,300, "Look", "Talk", "Enter", "lookCave", "talkCave", "enterCave");
-		createObject(2, 20, 250, 50, 50, "blank.png",50,50, "Look", "Talk", "Search", "lookRoot", "talkRoot", "searchRoot");
+		createObject(2, 450, 250, 120, 50, "blank.png",120,50, "Look", "Talk", "Search", "lookRoot", "talkRoot", "searchRoot");
 		createArrowButton(2,650,150,50,50,"arrowright.png", "goScene1");
 		bgPanel[2].add(bgLabel[2]);
+		
+		// SCENE 2
+		createBackground(3, "cave.png");
+		createArrowButton(3,650,150,50,50,"arrowright.png", "goScene1");
+		bgPanel[3].add(bgLabel[3]);
+		
 		
 		
 	}
