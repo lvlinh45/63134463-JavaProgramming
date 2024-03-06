@@ -239,7 +239,7 @@ public class UI {
 		arrowButton.setBorderPainted(false);
 
 		
-		
+		 
 		bgPanel[bgNum].add(arrowButton);
 		
 	}
