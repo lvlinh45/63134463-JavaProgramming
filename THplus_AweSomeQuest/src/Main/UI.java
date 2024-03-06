@@ -40,12 +40,15 @@ public class UI {
 	public JLabel titltLabel;
 	public JButton restartButton;
 	
+	public JLabel titltLabelWin;
+	
 	
 	public UI(GameManager gm) {
 		this.gm = gm;
 		createMainField();
 		createPlayerField();
 		createGameOverField();
+		createWinField();
 		generateScene();
 		window.setVisible(true);
 	}
@@ -113,6 +116,20 @@ public class UI {
 		window.add(restartButton);
 		
 	}
+	
+	public void createWinField() {
+		titltLabelWin = new JLabel("", JLabel.CENTER);
+		titltLabelWin.setBounds(200,150,400,150);
+		titltLabelWin.setForeground(Color.white);
+		titltLabelWin.setFont(new Font("Times New Roman", Font.PLAIN, 70));
+		titltLabelWin.setVisible(false);
+		window.add(titltLabelWin);
+		
+		
+	}
+	
+	
+	
 	
 	public void createObject(int bgNum, int objx, int objy, int objWidth, int objHeight, 
 			String objFileName,int scaleX, int scaleY, String choice1Name, String choice2Name, String choice3Name,  String choice1Command
@@ -214,7 +231,6 @@ public class UI {
 		    
 		JButton arrowButton = new JButton();
 		arrowButton.setBounds(x,y,width,height);
-		arrowButton.setBackground(null);
 		arrowButton.setContentAreaFilled(false);
 		arrowButton.setFocusPainted(false);
 		arrowButton.setIcon(resizedIcon);
@@ -291,15 +307,16 @@ public class UI {
 		
 		
 		// SCENE 2
-		createBackground(2, "ouside.png");
-		createObject(2, 180, 100, 260, 200, "blank.png",300,300, "Look", "Talk", "Enter", "lookCave", "talkCave", "enterCave");
-		createObject(2, 450, 250, 120, 50, "blank.png",120,50, "Look", "Talk", "Search", "lookRoot", "talkRoot", "searchRoot");
+		createBackground(2, "ouside.jpg");
+		createObject(2, 200, 50, 320, 260, "blank.png",300,300, "Look", "Talk", "Enter", "lookCave", "talkCave", "enterCave");
+		createObject(2, 0, 250, 150, 150, "blank.png",150,50, "Look", "Talk", "Search", "lookRoot", "talkRoot", "searchRoot");
 		createArrowButton(2,650,150,50,50,"arrowright.png", "goScene1");
 		bgPanel[2].add(bgLabel[2]);
 		
-		// SCENE 2
+		// SCENE 3
 		createBackground(3, "cave.png");
 		createArrowButton(3,650,150,50,50,"arrowright.png", "goScene1");
+		createObject(3, 240, 140, 220, 220, "monster.png",220,220, "Look", "Talk", "Attack", "lookMonster", "talkMonster", "attackMonster");
 		bgPanel[3].add(bgLabel[3]);
 		
 		

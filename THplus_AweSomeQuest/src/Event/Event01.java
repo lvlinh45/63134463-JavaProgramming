@@ -42,20 +42,20 @@ public class Event01 {
 					gm.player.playerLife--;
 					gm.player.updatePlayerStatus();
 				} else if(gm.player.playerLife ==1) {
-					gm.ui.messageText.setText("Guard: What a fool!)");
+					gm.ui.messageText.setText("Guard: What a fool!");
 					gm.player.playerLife--;
 					gm.schanger.showGameOverScreen(1);
 				}
 			}
 			else if(gm.player.hasSword==1) {
-				gm.ui.messageText.setText("Guard: Oh, no!\n(You have defeat"
+				gm.ui.messageText.setText("Guard: Oh, no!\n(You have defeat "
 						+ "the guard and gotten his shield!)");
 				gm.player.hasShield=1;
 			}
 			gm.player.updatePlayerStatus();
 		} 
 		else {
-			gm.ui.messageText.setText("Guard: Just leave me alone!)");
+			gm.ui.messageText.setText("Guard: Just leave me alone!");
 		}
 	}
 	

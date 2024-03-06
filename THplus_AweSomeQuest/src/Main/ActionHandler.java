@@ -34,6 +34,10 @@ public class ActionHandler implements ActionListener{
 		case "talkRoot": gm.ev2.talkRoot();break;
 		case "searchRoot": gm.ev2.searchRoot();break;
 		
+		case "lookMonster": gm.ev2.lookMonster();break;
+		case "talkMonster": gm.ev2.talkMonster();break;
+		case "attackMonster": gm.ev2.attackMonster();break;
+		
 		
 		// OTHERS
 		case "Restart" : gm.schanger.existGameOverScreen(); gm.schanger.showScreen1(); break;
