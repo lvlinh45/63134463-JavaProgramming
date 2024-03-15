@@ -16,7 +16,7 @@
 | 2   | KIỂU, TOÁN TỬ, LỆNH IF VÀ SWITCH         | _**DONE**_     |
 | 3   | MẢNG VÀ LỆNH LẶP                         | _**DONE**_     |
 | 4   | LỚP VÀ ĐỐI TƯỢNG                         | _**DONE**_     |
-| 5   | ARRAYLIST                                | _**PROGRESS**_ |
+| 5   | ARRAYLIST                                | _**DONE**_     |
 | 6   | CHUỖI VÀ BIỂU THỨC CHÍNH QUI             | _**PROGRESS**_ |
 | 7   | KẾ THỪA                                  | _**PROGRESS**_ |
 | 8   | KIẾN THỨC NÂNG CAO VỀ PHƯƠNG THỨC VÀ LỚP | _**PROGRESS**_ |
